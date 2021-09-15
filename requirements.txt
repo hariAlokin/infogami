@@ -3,3 +3,6 @@ requests
 simplejson
 six
 web.py
+psycopg2-binary
+ThingDB
+web.py

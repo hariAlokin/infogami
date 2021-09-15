@@ -1,0 +1,25 @@
+version: '3'
+
+services: 
+  infogami_database:
+    image: postgres
+    env_file:
+      - db.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  infogami:
+    build: .
+    image: infogami
+    environment: 
+      DATABASE_HOST: infogami_database
+      DATABASE_NAME: infogami
+      DATABASE_USER: alokin
+      DATABASE_PASSWORD: password 
+    ports: 
+      - "8080:8080"
+    depends_on: 
+      - infogami_database
+
+volumes: 
+  postgres_data:

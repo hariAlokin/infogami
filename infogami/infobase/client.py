@@ -426,7 +426,7 @@ class Site:
         return result
 
     def save_many(self, query, comment=None, data=None, action=None):
-        _query = json.dumps(query)
+        _query = json.dumps(list(query))
         # for q in query:
         #    self._run_hooks('before_new_version', q)
         data = data or {}

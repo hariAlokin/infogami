@@ -3,10 +3,15 @@ Sample run.py
 """
 from __future__ import print_function
 import infogami
+import os
 
 # your db parameters
 infogami.config.db_parameters = dict(
-    dbn='postgres', db="infogami", user='yourname', pw=''
+    dbn= 'postgres',
+    host= os.getenv('DATABASE_HOST', "localhost"),
+    db= os.getenv('DATABASE_NAME', "infohami"),
+    user=os.getenv('DATABASE_USER', "db_user"),
+    pw= os.getenv('DATABASE_PASSWORD'),
 )
 
 # site name
