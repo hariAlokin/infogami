@@ -9,7 +9,7 @@ import os
 infogami.config.db_parameters = dict(
     dbn= 'postgres',
     host= os.getenv('DATABASE_HOST', "localhost"),
-    db= os.getenv('DATABASE_NAME', "infohami"),
+    db= os.getenv('DATABASE_NAME', "infogami"),
     user=os.getenv('DATABASE_USER', "db_user"),
     pw= os.getenv('DATABASE_PASSWORD'),
 )
